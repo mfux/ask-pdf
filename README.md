@@ -4,4 +4,6 @@ Learning project followed from this tutorial [Video](https://www.youtube.com/wat
 
 ---
 
+Run with `streamlit run app.py`
+
 ---

@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
-import os
 import streamlit as st
+from PyPDF2 import PdfReader
 
 
 def main():
@@ -13,7 +13,15 @@ def main():
     # add uploader widget
     pdf = st.file_uploader("Upload your PDF", type="pdf")
 
+    # extract text from pdf
+    if pdf:
+        # create new pdf reader
+        pdf_reader = PdfReader(pdf)
+        text = ""
+        for page in pdf_reader.pages:
+            text += page.extract_text()
 
+        st.write(text)
 
 if __name__ == "__main__":
     main()
