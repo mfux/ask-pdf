@@ -7,3 +7,7 @@ Learning project followed from this tutorial [Video](https://www.youtube.com/wat
 Run with `streamlit run app.py`
 
 ---
+
+## Question Awnsering System
+
+![Schematic showing how the question answering system works](Ask_Book_Questions_Workflow.jpg)
