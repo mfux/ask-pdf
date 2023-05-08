@@ -7,6 +7,7 @@ from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
 from loguru import logger
+from langchain.callbacks import get_openai_callback
 
 loguru_logger = logger
 loguru_logger.add("logs.log", rotation="500 MB")
@@ -56,7 +57,10 @@ def main():
 
             llm = OpenAI()
             chain = load_qa_chain(llm, chain_type="stuff")
-            response = chain.run(input_documents=docs, question=user_question)
+            with get_openai_callback() as cb:
+                response = chain.run(input_documents=docs, question=user_question)
+                logger.info(response)
+                logger.info(cb)
 
             st.write(response)
 
