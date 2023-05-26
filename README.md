@@ -8,6 +8,6 @@ Run with `streamlit run app.py`
 
 ---
 
-## Question Awnsering System
+## Question Answering System
 
 ![Schematic showing how the question answering system works](Ask_Book_Questions_Workflow.jpg)
